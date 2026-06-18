@@ -1,8 +1,12 @@
 import { Pressable, Text, View } from "react-native";
+import { useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useColors } from "@/hooks/use-colors";
 import { cn } from "@/lib/utils";
 import type { Dua } from "@/lib/data/duas";
+import { AudioPlayer } from "./audio-player";
+import { ShareButton } from "./share-button";
+import { getAudioTrackByDuaId } from "@/lib/utils/audio-player";
 
 interface DuaCardProps {
   dua: Dua;
@@ -22,6 +26,8 @@ export function DuaCard({
   showFullContent = false,
 }: DuaCardProps) {
   const colors = useColors();
+  const [showAudioPlayer, setShowAudioPlayer] = useState(false);
+  const audioTrack = getAudioTrackByDuaId(dua.id);
 
   return (
     <Pressable
@@ -34,10 +40,7 @@ export function DuaCard({
       className="mb-4"
     >
       <View
-        className={cn(
-          "rounded-2xl p-6 border",
-          "bg-surface border-border"
-        )}
+        className={cn("rounded-2xl p-6 border", "bg-surface border-border")}
         style={{
           backgroundColor: colors.surface,
           borderColor: colors.border,
@@ -124,56 +127,29 @@ export function DuaCard({
           </>
         )}
 
+        {/* Audio Player */}
+        {showFullContent && audioTrack && (
+          <View className="mt-4 pt-4 border-t" style={{ borderTopColor: colors.border }}>
+            <Pressable
+              onPress={() => setShowAudioPlayer(!showAudioPlayer)}
+              style={({ pressed }) => [{ opacity: pressed ? 0.7 : 1 }]}
+              className="flex-row items-center gap-2 mb-3"
+            >
+              <MaterialIcons name="volume-up" size={18} color={colors.primary} />
+              <Text style={{ color: colors.primary, fontSize: 12, fontWeight: "600" }}>
+                {showAudioPlayer ? "Hide Audio" : "Play Audio"}
+              </Text>
+            </Pressable>
+            {showAudioPlayer && (
+              <AudioPlayer track={audioTrack} onClose={() => setShowAudioPlayer(false)} />
+            )}
+          </View>
+        )}
+
         {/* Action Buttons */}
         {showFullContent && (
-          <View className="flex-row gap-3 mt-6 pt-4 border-t" style={{ borderTopColor: colors.border }}>
-            <Pressable
-              onPress={() => onShare?.(dua)}
-              style={({ pressed }) => [
-                {
-                  flex: 1,
-                  opacity: pressed ? 0.7 : 1,
-                  backgroundColor: colors.primary,
-                },
-              ]}
-              className="py-2 px-4 rounded-lg items-center"
-            >
-              <MaterialIcons name="share" size={20} color={colors.background} />
-              <Text
-                className="text-xs font-semibold mt-1"
-                style={{
-                  color: colors.background,
-                }}
-              >
-                Share
-              </Text>
-            </Pressable>
-
-            <Pressable
-              onPress={() => {
-                // Copy to clipboard functionality would go here
-              }}
-              style={({ pressed }) => [
-                {
-                  flex: 1,
-                  opacity: pressed ? 0.7 : 1,
-                  backgroundColor: colors.surface,
-                  borderWidth: 1,
-                  borderColor: colors.border,
-                },
-              ]}
-              className="py-2 px-4 rounded-lg items-center"
-            >
-              <MaterialIcons name="content-copy" size={20} color={colors.primary} />
-              <Text
-                className="text-xs font-semibold mt-1"
-                style={{
-                  color: colors.primary,
-                }}
-              >
-                Copy
-              </Text>
-            </Pressable>
+          <View className="mt-6 pt-4 border-t" style={{ borderTopColor: colors.border }}>
+            <ShareButton dua={dua} size="medium" />
           </View>
         )}
       </View>

@@ -132,3 +132,32 @@
 - Follow Islamic compliance requirements
 - Respect differences among valid schools of thought
 - Design for elderly users with large text and simple navigation
+
+
+## Phase 14: Bug Fixes
+- [x] Fix icon mapping for search, favorites, settings tabs
+- [x] Test all screens on web, iOS, and Android
+
+## Phase 15: Audio Recitation (Offline)
+- [x] Implement offline audio player component
+- [x] Add audio playback controls (play, pause, stop)
+- [x] Store audio files locally in app bundle
+- [x] Add audio toggle in dua cards
+- [x] Display audio duration and current playback time
+
+## Phase 16: Push Notifications (Local)
+- [x] Implement local push notification scheduling
+- [x] Create notification service for prayer time alerts
+- [x] Add daily affirmation reminders
+- [x] Allow users to customize notification times
+- [x] Persist notification preferences to local storage
+- [ ] Test notifications on iOS and Android
+
+## Phase 17: Share-to-Image Feature (Offline)
+- [x] Create beautiful dua card image generator
+- [x] Implement share sheet integration
+- [x] Add social media sharing (WhatsApp, Facebook, Twitter, etc.)
+- [x] Add device sharing options (Messages, Email, etc.)
+- [x] Generate high-quality PNG/JPEG images with dua content
+- [x] Include app branding and Islamic design elements
+- [ ] Test image generation and sharing on all platforms
