@@ -1,0 +1,134 @@
+# Daily Islamic Affirmations - Development TODO
+
+## Phase 1: Core Database & Data Structure
+- [x] Create duas database with 365+ authentic affirmations
+- [x] Categorize duas by: Anxiety, Wealth, Protection, Gratitude, Sleep
+- [x] Add Arabic text, transliteration, English translation, commentary, and source for each dua
+- [x] Implement SQLite local storage for offline access
+- [x] Create data migration script to populate initial database
+
+## Phase 2: Prayer Time System
+- [x] Implement prayer time calculation using device location
+- [x] Create prayer time constants (Fajr, Dhuhr, Asr, Maghrib, Isha)
+- [x] Build countdown timer for next prayer
+- [x] Display current prayer and next prayer on Home screen
+- [ ] Add prayer time notification system
+- [x] Support multiple calculation methods (Hanafi, Shafi'i, etc.)
+
+## Phase 3: Core UI Components
+- [ ] Design and build Splash screen with animation
+- [x] Create Dua Card component (Arabic, transliteration, English, commentary, source)
+- [x] Build Prayer Time Card component
+- [x] Create Progress indicator component (X/5 Completed)
+- [x] Build Tab navigation (Home, Search, Favorites, Settings)
+- [x] Implement ScreenContainer for safe area handling
+- [x] Add theme colors (Emerald Green, Gold, White, Dark mode)
+
+## Phase 4: Home Screen
+- [x] Display greeting: "Assalamu Alaikum"
+- [x] Show current date (Gregorian + Hijri)
+- [x] Display prayer time card with countdown
+- [x] Show today's 5 affirmations (one per prayer period)
+- [x] Display progress: "X/5 Completed"
+- [x] Add Daily Reflection card
+- [ ] Implement dua unlocking based on prayer times
+- [x] Add tap-to-view functionality for each dua card
+
+## Phase 5: Dua Detail Screen
+- [x] Build full dua view with all details
+- [x] Implement bookmark/favorite toggle
+- [ ] Add share button (share as image or text)
+- [ ] Build previous/next dua navigation
+- [ ] Implement audio recitation player (if available)
+- [ ] Add copy-to-clipboard functionality
+- [x] Display source reference prominently
+
+## Phase 6: Search Screen
+- [x] Build search input with placeholder
+- [x] Implement search by topic, verse, keyword
+- [x] Create filter tabs (All, Anxiety, Wealth, Protection, Gratitude, Sleep)
+- [x] Display search results in scrollable list
+- [x] Add empty state message
+- [x] Implement tap-to-view for search results
+- [ ] Add search history (optional)
+
+## Phase 7: Favorites Screen
+- [x] Display all bookmarked duas
+- [x] Implement filter tabs by category
+- [x] Add empty state message
+- [ ] Implement swipe-to-delete (optional)
+- [x] Show favorite count
+- [x] Implement tap-to-view for favorites
+- [x] Persist favorites to local storage
+
+## Phase 8: Settings Screen
+- [x] Build dark mode toggle
+- [ ] Implement font size slider (Small, Medium, Large, Extra Large)
+- [x] Add preview text for font size
+- [ ] Build location permission toggle
+- [ ] Add manual location input
+- [ ] Create prayer calculation method selector
+- [x] Build notification toggle
+- [ ] Add notification time picker
+- [x] Display app version and developer info
+- [x] Add privacy policy and terms of service links
+- [x] Persist all settings to local storage
+
+## Phase 9: Additional Features
+- [ ] Implement Random Dua button
+- [ ] Add audio recitation for selected duas
+- [ ] Build dark mode support (all screens)
+- [ ] Implement font size adjustment across all screens
+- [ ] Add haptic feedback for interactions
+- [ ] Build notification system for prayer times
+- [ ] Create daily affirmation reminder notifications
+- [ ] Implement Hijri calendar display
+
+## Phase 10: Visual Assets & Branding
+- [x] Generate app logo (Crescent + Quran + Star)
+- [x] Create splash screen design
+- [x] Design app icon for app launcher
+- [x] Create adaptive icon for Android
+- [x] Update app.config.ts with branding info
+- [x] Generate favicon for web version
+- [ ] Create share-to-image template for duas
+
+## Phase 11: Accessibility & Polish
+- [ ] Ensure large touch targets (min 44x44pt)
+- [ ] Add screen reader support
+- [ ] Test with elderly users
+- [ ] Optimize for one-handed usage
+- [ ] Add smooth animations and transitions
+- [ ] Implement press feedback (scale + haptic)
+- [ ] Test dark mode on all screens
+- [ ] Verify high contrast ratios
+
+## Phase 12: Testing & Quality Assurance
+- [ ] Test all user flows end-to-end
+- [ ] Verify offline functionality
+- [ ] Test prayer time calculations
+- [ ] Test search and filter functionality
+- [ ] Verify favorites persistence
+- [ ] Test dark mode switching
+- [ ] Test font size adjustments
+- [ ] Test on multiple screen sizes
+- [ ] Verify all buttons and links work
+- [ ] Test on iOS and Android (Expo Go)
+
+## Phase 13: Optimization & Deployment
+- [ ] Optimize app performance
+- [ ] Reduce APK size
+- [ ] Minimize battery usage
+- [ ] Test on low-end devices
+- [ ] Create checkpoint before deployment
+- [ ] Prepare for Google Play Store submission
+- [ ] Generate APK/AAB for distribution
+- [ ] Create user documentation
+
+## Notes
+- All duas must be from authentic sources (Quran, Sahih Hadith)
+- App must work 100% offline after installation
+- No music or inappropriate imagery
+- Follow Islamic compliance requirements
+- Respect differences among valid schools of thought
+- Design for elderly users with large text and simple navigation

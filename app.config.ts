@@ -32,7 +32,7 @@ const env = {
   appSlug: "daily-islamic-affirmations",
   // S3 URL of the app logo - set this to the URL returned by generate_image when creating custom logo
   // Leave empty to use the default icon from assets/images/icon.png
-  logoUrl: "",
+  logoUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663772969713/Efq8pZwkY3ceNENoFMoCXc/icon-7pfx4BVvEeGcaEM4DAN5yL.webp",
   scheme: schemeFromBundleId,
   iosBundleId: bundleId,
   androidPackage: bundleId,
