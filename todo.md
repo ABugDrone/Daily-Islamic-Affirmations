@@ -161,3 +161,30 @@
 - [x] Generate high-quality PNG/JPEG images with dua content
 - [x] Include app branding and Islamic design elements
 - [ ] Test image generation and sharing on all platforms
+
+
+## Phase 18: Hijri Calendar Integration
+- [x] Implement Hijri date calculation from Gregorian date
+- [x] Create Hijri calendar view with month navigation
+- [x] Add Islamic holidays (Eid al-Fitr, Eid al-Adha, Islamic New Year, Prophet's Birthday)
+- [x] Display important Islamic dates and events
+- [x] Persist calendar preferences to local storage
+- [x] Show both Gregorian and Hijri dates on home screen
+
+## Phase 19: Dua Tracking & Achievements
+- [x] Create dua completion tracking system
+- [x] Implement daily streak counter
+- [x] Build achievement badge system (7-day, 30-day, 100-day streaks)
+- [x] Create statistics dashboard (total duas completed, current streak, etc.)
+- [x] Add visual progress indicators
+- [x] Persist tracking data to local storage
+- [x] Display achievements on profile/settings screen
+
+## Phase 20: Offline Quran Search
+- [x] Bundle lightweight Quran database (text only, ~2-3MB)
+- [x] Implement full-text search across all surahs
+- [x] Create Quran browser with surah list
+- [x] Add verse display with Arabic and English translation
+- [ ] Implement cross-references between duas and Quranic verses
+- [ ] Add bookmarking for favorite verses
+- [x] Optimize bundle size to keep app under 50MB
