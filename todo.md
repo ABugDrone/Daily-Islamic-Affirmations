@@ -188,3 +188,23 @@
 - [ ] Implement cross-references between duas and Quranic verses
 - [ ] Add bookmarking for favorite verses
 - [x] Optimize bundle size to keep app under 50MB
+
+
+## Phase 21: Notification Time Customization
+- [ ] Create time picker component for notification scheduling
+- [ ] Implement persistent notification time storage
+- [ ] Add notification scheduling for each prayer time
+- [ ] Create notification history screen
+- [ ] Add notification preview functionality
+- [ ] Implement background task scheduling
+
+## Phase 22: Statistics Dashboard
+- [ ] Create statistics screen component
+- [ ] Build completion tracking analytics
+- [ ] Implement visual charts using react-native-svg
+- [ ] Add monthly/yearly breakdown views
+- [ ] Display most-read duas and favorite categories
+- [ ] Show achievement progress and streaks
+- [ ] Create data export functionality
+
+

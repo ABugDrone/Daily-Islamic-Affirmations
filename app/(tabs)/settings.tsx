@@ -8,6 +8,7 @@ import { useColorScheme } from "@/hooks/use-color-scheme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
+import { NotificationTimePicker } from "@/components/notification-time-picker";
 
 export default function SettingsScreen() {
   const colors = useColors();
@@ -222,32 +223,12 @@ export default function SettingsScreen() {
           </View>
 
           {notificationsEnabled && (
-            <View
-              className={cn(
-                "rounded-lg p-4 border",
-                "bg-surface border-border"
-              )}
-              style={{
-                backgroundColor: colors.surface,
-                borderColor: colors.border,
-              }}
-            >
-              <Text
-                className="text-sm mb-2"
-                style={{
-                  color: colors.muted,
-                }}
-              >
-                Notification Time
-              </Text>
-              <Text
-                className="text-lg font-semibold"
-                style={{
-                  color: colors.primary,
-                }}
-              >
-                {notificationTime}
-              </Text>
+            <View className="px-0">
+              <NotificationTimePicker
+                value={notificationTime}
+                onChange={setNotificationTime}
+                label="Daily Reminder Time"
+              />
             </View>
           )}
         </View>
@@ -313,72 +294,68 @@ export default function SettingsScreen() {
             onPress={openPrivacyPolicy}
             style={({ pressed }) => [
               {
-                opacity: pressed ? 0.7 : 1,
+                paddingVertical: 12,
+                paddingHorizontal: 16,
+                borderRadius: 8,
                 backgroundColor: colors.surface,
                 borderColor: colors.border,
                 borderWidth: 1,
-                borderRadius: 8,
-                padding: 16,
-                marginBottom: 12,
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
+                marginBottom: 8,
+                opacity: pressed ? 0.7 : 1,
               },
             ]}
           >
             <Text
               style={{
-                color: colors.foreground,
+                color: colors.primary,
+                fontWeight: "500",
               }}
             >
               Privacy Policy
             </Text>
-            <MaterialIcons name="chevron-right" size={20} color={colors.muted} />
           </Pressable>
 
           <Pressable
             onPress={openTermsOfService}
             style={({ pressed }) => [
               {
-                opacity: pressed ? 0.7 : 1,
+                paddingVertical: 12,
+                paddingHorizontal: 16,
+                borderRadius: 8,
                 backgroundColor: colors.surface,
                 borderColor: colors.border,
                 borderWidth: 1,
-                borderRadius: 8,
-                padding: 16,
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
+                opacity: pressed ? 0.7 : 1,
               },
             ]}
           >
             <Text
               style={{
-                color: colors.foreground,
+                color: colors.primary,
+                fontWeight: "500",
               }}
             >
               Terms of Service
             </Text>
-            <MaterialIcons name="chevron-right" size={20} color={colors.muted} />
           </Pressable>
         </View>
 
         {/* Save Button */}
-        <View className="px-6">
+        <View className="px-6 mb-6">
           <Pressable
             onPress={handleSaveSettings}
             style={({ pressed }) => [
               {
-                opacity: pressed ? 0.9 : 1,
-                backgroundColor: colors.primary,
-                paddingVertical: 16,
+                paddingVertical: 14,
+                paddingHorizontal: 16,
                 borderRadius: 8,
-                alignItems: "center",
+                backgroundColor: colors.primary,
+                opacity: pressed ? 0.8 : 1,
               },
             ]}
           >
             <Text
-              className="font-semibold text-base"
+              className="text-center font-semibold text-lg"
               style={{
                 color: colors.background,
               }}
