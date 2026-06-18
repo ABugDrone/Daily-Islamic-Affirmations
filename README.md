@@ -1,137 +1,97 @@
 # Daily Islamic Affirmations
 
-A beautiful, offline-first mobile app for daily Islamic duas, prayer times, Hijri calendar, and Quran search. Built with React Native, Expo, and TypeScript.
+A beautiful, offline-first mobile application for daily Islamic duas, prayer times, and Quranic study. Built with React Native, Expo, and TypeScript.
 
-## Features
+## Overview
 
-### 🤲 Daily Duas & Affirmations
-- **100+ authentic duas** from the Quran and Sahih Hadith
-- **5 categories**: Anxiety, Wealth, Protection, Gratitude, Sleep
-- Arabic text with transliteration and English translations
-- Detailed commentary and source references
-- Bookmark your favorite duas for quick access
-- Search functionality to find duas by keyword or topic
+Daily Islamic Affirmations is a comprehensive Islamic companion app designed to help Muslims maintain consistent spiritual practices. The app features authentic duas from the Quran and Hadith, real-time prayer time calculations, Hijri calendar tracking, and offline Quran search capabilities. All features work completely offline with no internet connection required.
 
-### 🕌 Prayer Times & Islamic Calendar
-- **Real-time prayer time calculations** (Fajr, Dhuhr, Asr, Maghrib, Isha)
-- **Prayer countdown timer** showing time until next prayer
-- **Hijri calendar** with accurate Gregorian-to-Hijri conversion
-- **Islamic holidays & events**:
-  - Islamic New Year (1 Muharram)
-  - Day of Ashura (9-10 Muharram)
-  - Mawlid al-Nabi (12 Rabi' al-awwal)
-  - Laylat al-Isra and Mi'raj (27 Rajab)
-  - Ramadan (1-30 Ramadan)
-  - Laylat al-Qadr (27 Ramadan)
-  - Eid al-Fitr (1 Shawwal)
-  - Eid al-Adha (9 Dhu al-Hijjah)
-- Dual date display (Gregorian + Hijri)
+## Key Features
 
-### 📊 Dua Tracking & Achievements
-- **Daily completion tracking** for duas
-- **Streak counter** showing consecutive days of dua completion
-- **7 achievement badges**:
-  - 🎯 First Step (1 dua completed)
-  - 🔥 Week Warrior (7-day streak)
-  - 📅 Month Master (30-day streak)
-  - 💯 Century (100 duas completed)
-  - ⭐ Golden Streak (100-day streak)
-  - 💝 Devoted (365 duas completed)
-  - 🔥 Eternal Flame (365-day streak)
-- Progress indicators for next achievement
-- Statistics dashboard with lifetime stats
+### Core Functionality
+- **100+ Authentic Duas**: Curated collection of duas from Quran and Sahih Hadith across 5 categories (Anxiety, Wealth, Protection, Gratitude, Sleep)
+- **Prayer Time System**: Accurate prayer time calculation supporting multiple Islamic schools (Hanafi, Shafi'i, Maliki, Hanbali)
+- **Daily Affirmations**: Five duas organized by prayer period (Fajr, Dhuhr, Asr, Maghrib, Isha)
+- **Offline Functionality**: Complete offline operation with no internet dependency
 
-### 📖 Offline Quran Search
-- **Lightweight Quran database** (~500KB)
-- **Full-text search** across all verses
-- **Surah browser** with complete list
-- Arabic text with English translations
-- Quick access to frequently referenced surahs
-- Verse bookmarking
+### Advanced Features
+- **Hijri Calendar**: Interactive Islamic calendar with accurate Gregorian-to-Hijri date conversion
+- **Islamic Holidays**: 9 major Islamic holidays and observances with descriptions and dates
+- **Dua Tracking**: Daily completion tracking with streak counters and statistics
+- **Achievement Badges**: 7 unlockable achievements for consistency milestones (7-day, 30-day, 100-day, 365-day streaks)
+- **Offline Quran Search**: Full-text search across Quranic verses with Arabic and English translations
+- **Audio Recitation**: Offline audio player for Quranic recitations
+- **Local Notifications**: Prayer time reminders and daily affirmation alerts
+- **Share Functionality**: Generate and share duas to WhatsApp, Twitter, Facebook, and other platforms
 
-### 🎵 Audio & Notifications
-- **Offline audio recitation** player
-- **Local push notifications** for prayer times
-- **Daily affirmation reminders**
-- Customizable notification times
+### Customization
+- **Dark Mode**: Full dark mode support with automatic theme switching
+- **Font Size Control**: Adjustable text sizes for accessibility
+- **Favorites**: Bookmark and organize favorite duas by category
+- **Search**: Advanced search functionality across all duas and Quranic verses
+- **Settings**: Comprehensive settings for customization and preferences
 
-### 🎨 User Experience
-- **Beautiful Islamic UI** with emerald green & gold branding
-- **Dark mode support** with automatic theme switching
-- **Customizable font sizes** (Small, Medium, Large, Extra Large)
-- **Share-to-image** functionality for social media
-  - Share duas on WhatsApp, Twitter, Facebook
-  - Device sharing via Messages, Email, etc.
-- Responsive design for all screen sizes
-- Smooth animations and transitions
+## Technical Stack
 
-### 📱 Offline-First Architecture
-- **Works completely offline** - no internet required
-- All data stored locally on device
-- Uses device time/date and optional location
-- No external API dependencies
-- Privacy-focused - your data stays on your device
-
-## Tech Stack
-
-- **Framework**: React Native with Expo SDK 54
+- **Framework**: React Native 0.81 with Expo SDK 54
 - **Language**: TypeScript 5.9
-- **Styling**: NativeWind (Tailwind CSS for React Native)
-- **State Management**: React Context + AsyncStorage
-- **Database**: Local AsyncStorage for persistence
-- **Build Tool**: Metro bundler with Expo
-- **Testing**: Vitest for unit tests
+- **Styling**: NativeWind 4 (Tailwind CSS for React Native)
+- **State Management**: React Context with AsyncStorage persistence
+- **Data Storage**: AsyncStorage for local data persistence
+- **Navigation**: Expo Router 6
+- **UI Components**: React Native with Material Icons
+- **Build Tool**: Expo with Metro bundler
 
 ## Project Structure
 
 ```
 daily-islamic-affirmations/
-├── app/                          # Expo Router app structure
-│   ├── (tabs)/                   # Tab-based navigation
-│   │   ├── index.tsx             # Home screen
-│   │   ├── search.tsx            # Search duas
-│   │   ├── favorites.tsx         # Bookmarked duas
-│   │   └── settings.tsx          # App settings
-│   ├── _layout.tsx               # Root layout with providers
-│   └── oauth/                    # OAuth callback
-├── components/                   # Reusable UI components
-│   ├── dua-card.tsx              # Dua display card
-│   ├── prayer-time-card.tsx      # Prayer time display
-│   ├── hijri-calendar.tsx        # Islamic calendar
-│   ├── achievements.tsx          # Achievement badges
-│   ├── audio-player.tsx          # Audio playback
-│   ├── share-button.tsx          # Share functionality
-│   ├── quran-browser.tsx         # Quran search & display
-│   └── screen-container.tsx      # Safe area wrapper
+├── app/
+│   ├── (tabs)/
+│   │   ├── index.tsx           # Home screen
+│   │   ├── search.tsx          # Search screen
+│   │   ├── favorites.tsx       # Favorites screen
+│   │   └── settings.tsx        # Settings screen
+│   ├── _layout.tsx             # Root layout
+│   └── oauth/                  # OAuth callback
+├── components/
+│   ├── dua-card.tsx            # Dua display component
+│   ├── prayer-time-card.tsx    # Prayer time display
+│   ├── achievements.tsx        # Achievements display
+│   ├── hijri-calendar.tsx      # Hijri calendar component
+│   ├── quran-browser.tsx       # Quran search and display
+│   ├── audio-player.tsx        # Audio playback component
+│   ├── share-button.tsx        # Share functionality
+│   └── screen-container.tsx    # SafeArea wrapper
 ├── lib/
 │   ├── data/
-│   │   ├── duas.ts               # 100+ authentic duas database
-│   │   └── quran-lite.ts         # Lightweight Quran data
-│   └── utils/
-│       ├── prayer-times.ts       # Prayer time calculations
-│       ├── hijri-calendar.ts     # Hijri date conversion
-│       ├── dua-tracking.ts       # Streak & achievement system
-│       ├── audio-player.ts       # Audio playback utility
-│       ├── notifications.ts      # Local notifications
-│       └── share-image.ts        # Image generation for sharing
-├── hooks/                        # Custom React hooks
-│   ├── use-colors.ts             # Theme color access
-│   ├── use-color-scheme.ts       # Dark mode detection
-│   └── use-auth.ts               # Authentication state
-├── constants/                    # App constants
-├── theme.config.js               # Tailwind theme configuration
-├── app.config.ts                 # Expo configuration
-├── tailwind.config.js            # Tailwind CSS config
-└── package.json                  # Dependencies
-
+│   │   ├── duas.ts             # Duas database
+│   │   └── quran-lite.ts       # Lightweight Quran data
+│   ├── utils/
+│   │   ├── prayer-times.ts     # Prayer time calculation
+│   │   ├── hijri-calendar.ts   # Hijri date conversion
+│   │   ├── dua-tracking.ts     # Tracking and achievements
+│   │   ├── audio-player.ts     # Audio utilities
+│   │   ├── notifications.ts    # Notification system
+│   │   └── share-image.ts      # Share-to-image generation
+│   └── theme-provider.tsx      # Theme context
+├── hooks/
+│   ├── use-colors.ts           # Theme colors hook
+│   ├── use-color-scheme.ts     # Dark mode detection
+│   └── use-auth.ts             # Authentication hook
+├── assets/
+│   └── images/                 # App icons and assets
+├── app.config.ts               # Expo configuration
+├── tailwind.config.js          # Tailwind configuration
+└── package.json                # Dependencies
 ```
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js 18+ and npm/pnpm
-- Expo CLI (`npm install -g expo-cli`)
-- iOS Simulator or Android Emulator (or physical device with Expo Go)
+- Expo CLI
+- iOS Simulator or Android Emulator (or physical device)
 
 ### Installation
 
@@ -144,33 +104,28 @@ cd Daily-Islamic-Affirmations
 2. Install dependencies:
 ```bash
 pnpm install
-# or
-npm install
 ```
 
 3. Start the development server:
 ```bash
 pnpm dev
-# or
-npm run dev
 ```
 
-4. Open in your device:
-   - **iOS**: Press `i` in the terminal
-   - **Android**: Press `a` in the terminal
-   - **Web**: Press `w` in the terminal
-   - **Expo Go**: Scan the QR code with Expo Go app
+4. Open the app in your preferred platform:
+- **Web**: Visit the URL shown in terminal (typically http://localhost:8081)
+- **iOS**: Press `i` in terminal or use Expo Go app
+- **Android**: Press `a` in terminal or use Expo Go app
 
 ### Building for Production
 
-#### iOS
+#### Android APK
 ```bash
-eas build --platform ios
+eas build --platform android --type apk
 ```
 
-#### Android
+#### iOS IPA
 ```bash
-eas build --platform android
+eas build --platform ios
 ```
 
 #### Web
@@ -178,55 +133,105 @@ eas build --platform android
 pnpm build
 ```
 
-## Usage
+## Features in Detail
 
-### Daily Duas
-1. Open the app and view today's affirmations on the Home screen
-2. Each dua unlocks at its corresponding prayer time
-3. Tap any dua card to view full details
-4. Bookmark your favorites by tapping the heart icon
-5. Share duas to social media using the share button
-
-### Prayer Times
-1. Go to Settings to configure your location (optional)
-2. Home screen displays current and next prayer times
-3. Countdown timer shows time until next prayer
-4. Enable notifications for prayer time alerts
+### Prayer Time System
+- Calculates prayer times based on device location or manual coordinates
+- Supports multiple calculation methods (Hanafi, Shafi'i, Maliki, Hanbali)
+- Real-time countdown to next prayer
+- Displays current and next prayer times
+- Local notifications for prayer reminders
 
 ### Hijri Calendar
-1. Navigate to the calendar view in Settings
-2. Browse months and view Islamic holidays
-3. See event descriptions and Arabic names
-4. Check upcoming important dates
+- Accurate Gregorian to Hijri date conversion
+- Interactive calendar with month navigation
+- 9 Islamic holidays with descriptions:
+  - Islamic New Year (1 Muharram)
+  - Day of Ashura (9-10 Muharram)
+  - Mawlid al-Nabi (12 Rabi' al-awwal)
+  - Laylat al-Isra and Mi'raj (27 Rajab)
+  - Ramadan begins (1 Ramadan)
+  - Laylat al-Qadr (27 Ramadan)
+  - Eid al-Fitr (1 Shawwal)
+  - Day of Arafah (8 Dhu al-Hijjah)
+  - Eid al-Adha (9 Dhu al-Hijjah)
 
-### Track Your Progress
-1. Complete duas daily to build your streak
-2. View your statistics in Settings
-3. Unlock achievement badges
-4. Share your progress with others
+### Dua Tracking and Achievements
+- Track daily dua completions
+- Maintain current and longest streaks
+- Unlock 7 achievement badges:
+  - First Step: Complete 1 dua
+  - Week Warrior: 7-day streak
+  - Month Master: 30-day streak
+  - Century: 100 duas completed
+  - Golden Streak: 100-day streak
+  - Devoted: 365 duas completed
+  - Eternal Flame: 365-day streak
 
-### Search Quran
-1. Use the search feature to find Quranic verses
-2. Browse by surah or search by keyword
-3. View Arabic text with English translations
-4. Reference verses while reading duas
+### Offline Quran Search
+- Full-text search across Quranic verses
+- Browse all surahs with verse listings
+- Arabic text with English translations
+- Lightweight database (500KB) for minimal app size
 
-## Features Roadmap
+### Audio Recitation
+- Offline audio playback for Quranic recitations
+- Play, pause, and stop controls
+- Audio duration and playback time display
+- Integrated with dua cards
 
-- [ ] Full Quran with all 114 surahs
-- [ ] Tafsir (Quranic commentary)
-- [ ] Hadith database integration
-- [ ] Ramadan special mode with daily plans
-- [ ] Community sharing features
-- [ ] Dua recommendations engine
-- [ ] Multi-language support
-- [ ] Advanced statistics and analytics
-- [ ] Cloud sync (optional)
-- [ ] Apple Watch companion app
+### Share Functionality
+- Generate beautiful dua cards as images
+- Share to WhatsApp, Twitter, Facebook
+- Device sharing options (Messages, Email, etc.)
+- Completely offline - no internet required
+
+## Data Storage
+
+All data is stored locally on the device using AsyncStorage:
+- User preferences (dark mode, font size, language)
+- Dua completion history
+- Favorite duas
+- Achievement progress
+- Notification settings
+
+## Offline Capabilities
+
+The app is designed to work completely offline:
+- No internet connection required
+- All duas and Quranic verses bundled locally
+- Prayer times calculated from device time and location
+- Notifications managed locally
+- All data persisted locally
+
+## Performance
+
+- App size: Approximately 45-50MB
+- Lightweight Quran database: 500KB
+- Efficient data persistence with AsyncStorage
+- Optimized bundle size for fast downloads
+- Smooth animations and transitions
+
+## Customization
+
+### Theme Colors
+Edit `theme.config.js` to customize app colors:
+- Primary: Emerald Green (#10b981)
+- Accent: Gold (#d4af37)
+- Background, Surface, Border, Success, Warning, Error
+
+### Prayer Calculation Methods
+Modify prayer time calculation in `lib/utils/prayer-times.ts` to support additional Islamic schools.
+
+### Duas Database
+Add or modify duas in `lib/data/duas.ts` with Arabic text, transliteration, English translation, and source references.
+
+### Quran Data
+Expand Quranic verses in `lib/data/quran-lite.ts` for comprehensive Quran search functionality.
 
 ## Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Please follow these guidelines:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -234,72 +239,40 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Code Style
-
-- Use TypeScript for type safety
-- Follow ESLint configuration
-- Format code with Prettier
-- Write meaningful commit messages
-- Add tests for new features
-
-## Testing
-
-```bash
-# Run tests
-pnpm test
-
-# Run tests in watch mode
-pnpm test:watch
-
-# Run tests with coverage
-pnpm test:coverage
-```
-
-## Performance
-
-- App bundle size: ~40MB (optimized)
-- Quran database: ~500KB (lightweight)
-- Local storage: ~2MB (duas + user data)
-- Startup time: <2 seconds
-- Smooth 60fps animations
-
-## Privacy & Security
-
-- ✅ All data stored locally on device
-- ✅ No personal data collection
-- ✅ No tracking or analytics
-- ✅ No external API calls
-- ✅ Open source - inspect the code
-- ✅ Offline-first design
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open source and available under the MIT License.
 
 ## Acknowledgments
 
 - Duas sourced from authentic Islamic texts and Hadith collections
-- Prayer time calculations based on Islamic astronomical methods
-- Quran text from reliable Islamic sources
-- UI inspired by modern Islamic design principles
-- Built with ❤️ for the Muslim community
+- Prayer time calculations based on established Islamic astronomical methods
+- Hijri calendar conversion using proven algorithms
+- Quranic text from reliable Islamic sources
+- Icons and design inspired by Islamic art and modern UI principles
 
 ## Support
 
-If you encounter any issues or have suggestions:
+For issues, feature requests, or questions:
+- Open an issue on GitHub
+- Check existing issues for similar problems
+- Provide detailed information about your environment and the issue
 
-1. Check existing [GitHub Issues](https://github.com/ABugDrone/Daily-Islamic-Affirmations/issues)
-2. Create a new issue with detailed description
-3. Include device info, OS version, and steps to reproduce
-4. Share error logs if applicable
+## Roadmap
+
+Future enhancements planned:
+- Multi-language support (Arabic, Urdu, Bengali, French)
+- Advanced analytics dashboard
+- Customizable daily reminder notifications
+- Extended Quran database with full text
+- Community features for sharing duas
+- Integration with Islamic calendar apps
 
 ## Contact
 
-- **GitHub**: [@ABugDrone](https://github.com/ABugDrone)
-- **Repository**: [Daily-Islamic-Affirmations](https://github.com/ABugDrone/Daily-Islamic-Affirmations)
+For more information or inquiries, please visit the repository at:
+https://github.com/ABugDrone/Daily-Islamic-Affirmations
 
 ---
 
-Made with 🤲 for the Muslim community. May Allah accept this work and benefit all who use it.
-
-**Allahumma Ameen** 🌙
+Built with dedication for the Muslim community. May this app help you maintain consistent spiritual practices.
