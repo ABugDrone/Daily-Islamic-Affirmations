@@ -55,12 +55,6 @@ const config: ExpoConfig = {
       }
   },
   android: {
-    adaptiveIcon: {
-      backgroundColor: "#10b981",
-      foregroundImage: "./assets/images/android-icon-foreground.png",
-      backgroundImage: "./assets/images/android-icon-background.png",
-      monochromeImage: "./assets/images/android-icon-monochrome.png",
-    },
     edgeToEdgeEnabled: true,
     predictiveBackGestureEnabled: false,
     package: env.androidPackage,
@@ -85,7 +79,6 @@ const config: ExpoConfig = {
     favicon: "./assets/images/favicon.png",
   },
   plugins: [
-    "./plugins/with-generated-icons",
     "expo-router",
     [
       "expo-audio",
